@@ -81,7 +81,7 @@ export default function Profile() {
               </div>
               <div className="name flex w-full gap-4">
                 <input {...formik.getFieldProps('mobile')} className="textbox" type="text" placeholder='Past Experience.' />
-                <input {...formik.getFieldProps('email')} className="textbox" type="text" placeholder='Qualification' />
+                <input {...formik.getFieldProps('qualification')} className="textbox" type="text" placeholder='Qualification' />
               </div>
               <input {...formik.getFieldProps('address')} className="textbox" type="text" placeholder='Address' />
               <button className="btn" type='submit'>Update</button>
