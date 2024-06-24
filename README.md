@@ -5,8 +5,12 @@
 
 Develop a user authentication system with login and signup capabilities, incorporate OTP verification for enhanced security, and allow profile updates while ensuring robust data validation, password hashing, and user-friendly interface design.
 
-Deployed App
+#Deployed App
 https://poetic-marzipan-598239.netlify.app/
+
+#Recorded Video
+
+https://drive.google.com/file/d/1UAFl8NDh6tcRN2AKzzIfKkXEXSfcNDeD/view?usp=sharing
 
 # Login Page:-
 
