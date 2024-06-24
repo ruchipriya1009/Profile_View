@@ -8,9 +8,9 @@ Develop a user authentication system with login and signup capabilities, incorpo
 #Deployed App
 https://poetic-marzipan-598239.netlify.app/
 
-#Recorded Video
+#Demo Video Link
 
-https://drive.google.com/file/d/1UAFl8NDh6tcRN2AKzzIfKkXEXSfcNDeD/view?usp=sharing
+https://drive.google.com/file/d/1bnMG_bDGk3e7dpL0YR0mMvb_nQE7hjCs/view?usp=sharing
 
 # Login Page:-
 
