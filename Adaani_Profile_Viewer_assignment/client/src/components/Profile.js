@@ -68,11 +68,6 @@ export default function Profile() {
               </a>
             </li>
             <li>
-              <a href="/profile" className="text-white">
-                Profile
-              </a>
-            </li>
-            <li>
               <button onClick={userLogout} className="text-white">
                 Logout
               </button>
@@ -89,7 +84,7 @@ export default function Profile() {
             </span>
           </div>
           <form className="py-4" onSubmit={formik.handleSubmit}>
-            <div className="profile flex justify-center py-2">
+            <div className="profile flex flex-col justify-center items-center py-2">
               <label htmlFor="profile">
                 <img
                   src={apiData?.profile || file || avatar}
@@ -97,6 +92,7 @@ export default function Profile() {
                   alt="avatar"
                 />
               </label>
+              <span className="upload_text">Upload your profile</span>
               <input
                 onChange={onUpload}
                 type="file"
@@ -174,6 +170,15 @@ export default function Profile() {
           border-radius: 50%;
           width: 80px;
           height: 80px;
+        }
+
+        .upload_text {
+          margin-top: 10px;
+          font-size: 10px;
+          font-weight: bold;
+          font-style: italic;
+          color: #666;
+          text-align: center;
         }
 
         .textbox {

@@ -16,8 +16,15 @@ export default function Register() {
       email: "",
       username: "",
       password: "",
+      confirmPassword: "",
     },
-    validate: registerValidation,
+    validate: (values) => {
+      const errors = registerValidation(values);
+      if (values.password !== values.confirmPassword) {
+        errors.confirmPassword = "Passwords do not match";
+      }
+      return errors;
+    },
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
@@ -43,13 +50,21 @@ export default function Register() {
 
   const styles = {
     container: {
-      width: "30%",
-      paddingTop: "2em",
+      width: "90%",
+      maxWidth: "400px",
+      padding: "2em",
       background: "rgba(255, 255, 255, 0.8)",
       borderRadius: "16px",
       boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
       margin: "0 auto",
     },
+    profileImg: {
+      width: "80px",
+      height: "80px",
+      borderRadius: "50%",
+      objectFit: "cover",
+    },
+
     title: {
       textAlign: "center",
     },
@@ -62,21 +77,15 @@ export default function Register() {
       fontSize: "1.25em",
       color: "gray",
     },
-    profileImg: {
-      width: "80px",
-      height: "80px",
-      borderRadius: "50%",
-      objectFit: "cover",
-    },
     textbox: {
-      width: "80%",
-      padding: "0.5em",
+      width: "100%",
+      padding: "5px",
       border: "1px solid #ccc",
       borderRadius: "8px",
       margin: "0.5em 0",
     },
     button: {
-      width: "80%",
+      width: "100%",
       padding: "0.5em",
       backgroundColor: "#f56565",
       color: "#fff",
@@ -94,7 +103,7 @@ export default function Register() {
     <div className="container mx-auto">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center min-h-screen">
         <div style={styles.container}>
           <div className="title" style={styles.title}>
             <h4 style={styles.heading}>Register Here</h4>
@@ -102,8 +111,8 @@ export default function Register() {
           </div>
 
           <form className="py-1" onSubmit={formik.handleSubmit}>
-            <div className="profile flex justify-center py-4">
-              <label htmlFor="profile">
+            <div className="profile flex flex-col justify-center items-center py-2">
+              <label htmlFor="profi">
                 <img
                   src={file || avatar}
                   style={styles.profileImg}
@@ -116,6 +125,7 @@ export default function Register() {
                 type="file"
                 id="profile"
                 name="profile"
+                style={{ display: "none" }}
               />
             </div>
 
@@ -129,7 +139,7 @@ export default function Register() {
               <input
                 {...formik.getFieldProps("username")}
                 style={styles.textbox}
-                type=""
+                type="text"
                 placeholder="Username*"
               />
               <input
@@ -137,6 +147,12 @@ export default function Register() {
                 style={styles.textbox}
                 type="password"
                 placeholder="Password*"
+              />
+              <input
+                {...formik.getFieldProps("confirmPassword")}
+                style={styles.textbox}
+                type="password"
+                placeholder="Confirm Password*"
               />
               <button style={styles.button} type="submit">
                 Register

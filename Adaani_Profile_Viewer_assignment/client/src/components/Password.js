@@ -11,8 +11,8 @@ import { verifyPassword } from "../helper/helper";
 // Define styles directly as an object
 const styles = {
   glass: {
-    width: "300px", // Reduced width
-    padding: "20px", // Reduced padding
+    width: "400px",
+    padding: "20px",
     background: "rgba(255, 255, 255, 0.15)",
     borderRadius: "10px",
     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
@@ -21,25 +21,25 @@ const styles = {
     border: "1px solid rgba(255, 255, 255, 0.3)",
   },
   profileImg: {
-    width: "80px", // Reduced width
-    height: "80px", // Reduced height
+    width: "80px",
+    height: "80px",
     borderRadius: "50%",
   },
   textbox: {
-    width: "200px", // Reduced width
-    padding: "10px", // Reduced padding
+    width: "200px",
+    padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "5px",
-    fontSize: "14px", // Reduced font size
+    fontSize: "14px",
   },
   btn: {
-    width: "200px", // Reduced width
-    padding: "10px", // Reduced padding
+    width: "200px",
+    padding: "10px",
     backgroundColor: "#007bff",
     color: "white",
     border: "none",
     borderRadius: "5px",
-    fontSize: "14px", // Reduced font size
+    fontSize: "14px",
     cursor: "pointer",
   },
 };
